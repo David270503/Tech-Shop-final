@@ -1,0 +1,45 @@
+import { useState, useEffect } from 'react'
+import './App.css'
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Cart from './components/Cart'
+import { Route, Routes } from 'react-router-dom'
+import ProductList from './components/ProductList'
+import { useCart } from './hooks/useCart'
+import Contact from './components/Contact'
+import Products from './components/Products'
+
+function App() {
+  const [products, setProducts] = useState([])
+  const {cart, addToCart, removeFromCart, updateQuantity} = useCart()
+
+  useEffect(() => {
+    fetch('https://6915ce17465a9144626da7a8.mockapi.io/produits/Products')
+      .then(res => res.json())
+      .then(data => setProducts(data))
+      .catch(err => console.error('Erreur API : ', err))
+  }, [])
+
+  return (
+    <>
+      <Header count={cart.length} />
+
+      <main>
+        <Routes>
+          <Route path='/' element={
+            <ProductList products={products} onAddToCart={addToCart} />
+          } />
+          <Route path='/produits' element={<Products products={products} onAddToCart={addToCart}/>}></Route>
+          <Route path='/contact' element={<Contact />}></Route>
+          <Route path='/panier' element={
+            <Cart items={cart} onRemove={removeFromCart} onUpdateQuantity={updateQuantity}/>
+          } />
+        </Routes>
+      </main>
+
+      <Footer />
+    </>
+  )
+}
+
+export default App
