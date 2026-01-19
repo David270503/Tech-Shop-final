@@ -8,6 +8,7 @@ import ProductList from './components/Home'
 import { useCart } from './hooks/useCart'
 import Contact from './components/Contact'
 import Products from './components/Products'
+import Orders from './components/Orders'
 
 function App() {
   const [products, setProducts] = useState([])
@@ -34,6 +35,7 @@ function App() {
           <Route path='/panier' element={
             <Cart items={cart} onRemove={removeFromCart} onUpdateQuantity={updateQuantity}/>
           } />
+          <Route path='/commande' element={<Orders />}/>
         </Routes>
       </main>
 

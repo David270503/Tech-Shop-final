@@ -6,11 +6,11 @@ function ProductList({ products, onAddToCart }) {
 
     return (
         <>
-            <div className='phrase-accroche'>
+            <div className='accroche'>
                 <h2>La technologie qui simplifie votre quotidien</h2>
                 <p>Découvrez nos produits</p>
                 <Link to="/produits">
-                    <button className='btn-acheter'>Achetez</button>
+                    <button className='btn-acheter'>Voir</button>
                 </Link>
             </div>
             <section className='products-section'>

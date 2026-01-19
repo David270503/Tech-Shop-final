@@ -1,14 +1,11 @@
 import { Link } from "react-router-dom";
+import Orders from "./Orders";
 
 function Cart({ items, onRemove, onUpdateQuantity }) {
   const total = items.reduce((acc, item) => acc + (parseFloat(item.price) * (item.quantity || 1)), 0);
 
   return (
     <div className="cart-page">
-      <Link to='/produits' className='back-link'>
-        ← Retour aux produits
-      </Link>
-
       <h2>Mon Panier</h2>
       {items.length === 0 ? (
         <p>Votre panier est vide.</p>
@@ -37,7 +34,9 @@ function Cart({ items, onRemove, onUpdateQuantity }) {
           ))}
           <div className="cart-summary">
             <h3>Total Commande : {total.toFixed(2)}€</h3>
-            <button className="btn-checkout">Valider la commande</button>
+            <Link to='/commande' className="checkout">
+              Valider la commande
+            </Link>
           </div>
         </div>
       )}
