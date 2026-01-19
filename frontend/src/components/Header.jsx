@@ -4,8 +4,10 @@ function Header(props) {
     return (
         <header className="main-header">
             <div className='logo-container'>
-                <img src="/Images/logo.png" alt="logo" className="logo-image" />
-                <h1 className="title">Tech-Shop</h1>
+                <Link to="/">
+                    <img src="/Images/logo.png" alt="logo" className="logo-image" />
+                    <h1 className="title">Tech-Shop</h1>
+                </Link>
             </div>
             <nav className="nav-links">
                 <div className="menu-center">

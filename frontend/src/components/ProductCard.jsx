@@ -1,9 +1,9 @@
 function ProductCard(props) {
     return (
         <div className="product-card">
-            <img src={props.image} alt={props.titre} className="image-product" />
-            <h4>{props.titre}</h4>
-            <p>{props.prix}</p>
+            <img src={props.image} alt={props.name} className="image-product" />
+            <h4>{props.name}</h4>
+            <p>{props.price}€</p>
 
             <button onClick={props.onAdd}>Ajouter au panier</button>
         </div>

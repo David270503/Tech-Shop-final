@@ -1,16 +1,16 @@
 generator client {
-  provider = "prisma-client"
-  output   = "../src/generated/prisma"
+  provider = "prisma-client-js"
 }
 
 datasource db {
   provider = "postgresql"
 }
 
-model Product {
-  id Int @id @default(autoincrement())
-  name String
+model Products {
+  id          Int     @id @default(autoincrement())
+  name        String
   description String
-  price Decimal
-  image String
+  price       Decimal
+  image       String
+  isFeatured  Boolean @default(false)
 }

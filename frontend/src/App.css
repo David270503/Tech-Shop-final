@@ -43,10 +43,12 @@ header img {
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-.logo-container {
+.logo-container a{
     display: flex;
     align-items: center;
     gap: 10px;
+    text-decoration: none;
+    color: inherit;
 }
 
 .logo-image {

@@ -4,7 +4,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import Cart from './components/Cart'
 import { Route, Routes } from 'react-router-dom'
-import ProductList from './components/ProductList'
+import ProductList from './components/Home'
 import { useCart } from './hooks/useCart'
 import Contact from './components/Contact'
 import Products from './components/Products'
@@ -14,7 +14,7 @@ function App() {
   const {cart, addToCart, removeFromCart, updateQuantity} = useCart()
 
   useEffect(() => {
-    fetch('https://6915ce17465a9144626da7a8.mockapi.io/produits/Products')
+    fetch('http://localhost:3001/products')
       .then(res => res.json())
       .then(data => setProducts(data))
       .catch(err => console.error('Erreur API : ', err))

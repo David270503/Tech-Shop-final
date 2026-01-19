@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 function Cart({ items, onRemove, onUpdateQuantity }) {
-  const total = items.reduce((acc, item) => acc + (parseFloat(item.prix) * (item.quantity || 1)), 0);
+  const total = items.reduce((acc, item) => acc + (parseFloat(item.price) * (item.quantity || 1)), 0);
 
   return (
     <div className="cart-page">
@@ -16,10 +16,10 @@ function Cart({ items, onRemove, onUpdateQuantity }) {
         <div className="cart-container">
           {items.map((item) => (
             <div key={item.id} className="cart-item">
-              <img src={item.image} alt={item.titre} width="80" />
+              <img src={item.image} alt={item.name} width="80" />
               <div className="item-details">
-                <h3>{item.titre}</h3>
-                <p>{item.prix}€</p>
+                <h3>{item.name}</h3>
+                <p>{item.price}€</p>
               </div>
 
               <div className="quantity-selector">
@@ -29,7 +29,7 @@ function Cart({ items, onRemove, onUpdateQuantity }) {
               </div>
 
               <div className="item-subtotal">
-                {(item.prix * item.quantity).toFixed(2)}€
+                {(item.price * item.quantity).toFixed(2)}€
               </div>
 
               <button className='btn-delete-product' onClick={() => onRemove(item.id)}>Supprimer</button>
