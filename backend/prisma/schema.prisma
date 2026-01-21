@@ -6,11 +6,31 @@ datasource db {
   provider = "postgresql"
 }
 
-model Products {
+model Product {
   id          Int     @id @default(autoincrement())
   name        String
   description String
   price       Decimal
   image       String
   isFeatured  Boolean @default(false)
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  email     String   @unique
+  name      String
+  address   String
+  phone     String
+  createdAt DateTime @default(now())
+
+  orders Order[]
+}
+
+model Order {
+  id           Int      @id @default(autoincrement())
+  orderNumber  String   @unique
+  totalPrice   Float
+  createdAt    DateTime @default(now())
+  userId       Int
+  user         User    @relation(fields: [userId], references: [id])
 }

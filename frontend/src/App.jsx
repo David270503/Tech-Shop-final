@@ -9,10 +9,11 @@ import { useCart } from './hooks/useCart'
 import Contact from './components/Contact'
 import Products from './components/Products'
 import Orders from './components/Orders'
+import OrderConfirmation from './components/OrderConfirmation '
 
 function App() {
   const [products, setProducts] = useState([])
-  const {cart, addToCart, removeFromCart, updateQuantity} = useCart()
+  const {cart, addToCart, removeFromCart, updateQuantity, confirmOrder} = useCart()
 
   useEffect(() => {
     fetch('http://localhost:3001/products')
@@ -35,7 +36,8 @@ function App() {
           <Route path='/panier' element={
             <Cart items={cart} onRemove={removeFromCart} onUpdateQuantity={updateQuantity}/>
           } />
-          <Route path='/commande' element={<Orders />}/>
+          <Route path='/commande' element={<Orders items={cart} confirmOrder={confirmOrder}/>}/>
+          <Route path='/confirmation-commande' element={<OrderConfirmation />}/>
         </Routes>
       </main>
 

@@ -144,65 +144,6 @@ header img {
     font-weight: bold;
 }
 
-/* CONTACT */
-
-.contact {
-    padding: 0;
-    border-radius: 0;
-    text-align: center;
-    max-width: 600px;
-    margin: 50px auto 30px auto;
-}
-
-.form-contact {
-    text-align: center;
-    padding: 0 20px 50px 20px;
-    max-width: 450px;
-    margin: 0 auto;
-}
-
-.form-contact input[type="text"],
-.form-contact input[type="email"],
-.form-contact textarea {
-    display: block;
-    padding: 15px;
-    width: 100%;
-    margin: 0 auto 25px auto;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-size: 1em;
-    transition: border-color 0.3s ease;
-    box-sizing: border-box;
-}
-
-.form-contact input:focus,
-.form-contact textarea:focus {
-    border-color: #007bff;
-    outline: none;
-}
-
-.form-contact textarea {
-    height: 150px;
-    resize: vertical;
-}
-
-#btn-send {
-    background-color: #007bff;
-    color: white;
-    font-weight: 700;
-    font-size: 1.1em;
-    padding: 12px 30px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-#btn-send:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
-}
-
 /* ACCEUIL */
 
 .accroche {
@@ -323,7 +264,70 @@ header img {
     background-color: #444;
 }
 
+/* CONTACT */
+
+.contact {
+    padding: 0;
+    border-radius: 0;
+    text-align: center;
+    max-width: 600px;
+    margin: 50px auto 30px auto;
+}
+
+.form-contact {
+    text-align: center;
+    padding: 0 20px 50px 20px;
+    max-width: 450px;
+    margin: 0 auto;
+}
+
+.form-contact input[type="text"],
+.form-contact input[type="email"],
+.form-contact textarea {
+    display: block;
+    padding: 15px;
+    width: 100%;
+    margin: 0 auto 25px auto;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+.form-contact input:focus,
+.form-contact textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.form-contact textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+#btn-send {
+    background-color: #007bff;
+    color: white;
+    font-weight: 700;
+    font-size: 1.1em;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#btn-send:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
 /* PANIER */
+
+.cart-page {
+    min-height: 56.5vh;
+}
 
 .cart-page h2 {
     margin-bottom: 30px;
@@ -433,6 +437,207 @@ header img {
 
 .checkout:hover {
     background-color: #0056b3;
+}
+
+/* FORMULAIRE ORDERS */
+
+.checkout-page {
+    padding: 40px 5%;
+    background-color: #f4f6f8;
+    min-height: 100vh;
+}
+
+.checkout-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.form {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.form label {
+    display: block;
+    margin-bottom: 20px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form input {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form input:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.btn-send-orders {
+    width: 100%;
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background 0.3s;
+}
+
+.btn-send-orders:hover {
+    background-color: #0056b3;
+}
+
+.resume-order {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    height: fit-content;
+    position: sticky;
+    top: 20px;
+}
+
+.resume-order > p {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #f4f6f8;
+}
+
+.resume-order .cart-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #eee;
+  box-shadow: none;
+  background: transparent;
+}
+
+.resume-order .cart-item img {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+}
+
+.resume-order .item-details h3 {
+  font-size: 0.9rem;
+}
+
+/* CONFIRMATION COMMANDE */
+
+.confirmation-order {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Roboto', sans-serif;
+}
+
+.confirmation-card {
+  background-color: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  margin-bottom: 30px;
+}
+
+.icon-sucess {
+  font-size: 4rem;
+  margin-bottom: 15px;
+  animation: popIn 0.5s ease-back;
+}
+
+.confirmation-card h1 {
+  color: #28a745;
+  margin-bottom: 10px;
+}
+
+.confirmation-card p {
+  color: #666;
+  font-size: 1.1rem;
+}
+
+.recapitulatif-commande {
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.recapitulatif-commande > p {
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #333;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.recapitulatif-commande .cart-item {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid #eee;
+}
+
+.recapitulatif-commande img {
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+.recapitulatif-commande .item-details h3 {
+  font-size: 1rem;
+  margin: 0 0 5px 0;
+}
+
+.recapitulatif-commande .item-details p {
+  font-weight: bold;
+  color: #007bff;
+  margin: 0;
+}
+
+.btn-back-home {
+  display: inline-block;
+  background-color: #333;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-back-home:hover {
+  background-color: #000;
+  transform: translateY(-2px);
+}
+
+@keyframes popIn {
+  0% { transform: scale(0); }
+  80% { transform: scale(1.1); }
+  100% { transform: scale(1); }
 }
 
 /* ==============================================

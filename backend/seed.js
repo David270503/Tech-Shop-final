@@ -1,4 +1,4 @@
-import prisma from './src/prismaClient.js';
+import prisma from './src/prismaClient.js'
 
 async function main() {
     console.log('🌱 Debut du seeding...');
@@ -61,7 +61,7 @@ async function main() {
     ]
 
     for (const product of products) {
-        await prisma.products.create({
+        await prisma.product.create({
             data: product
         })
         console.log(`✅ Produit créé : ${product.name}`);
