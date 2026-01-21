@@ -21,3 +21,8 @@ export const createOrderInDb = async (userData, totalAmount) => {
     })
     return newOrder
 }
+
+export const getAllOrdersService = async () => {
+    const orders = await prisma.order.findMany()
+    return orders
+}

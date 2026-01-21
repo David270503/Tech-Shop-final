@@ -1,4 +1,4 @@
-import { createOrderInDb } from "../services/ordersService.js"
+import { createOrderInDb, getAllOrdersService } from "../services/ordersService.js"
 
 export const createOrder = async (req, res) => {
     try {
@@ -15,5 +15,15 @@ export const createOrder = async (req, res) => {
             sucess: false,
             message: "Erreur dans la creation de commande"
         })
+    }
+}
+
+export const getAllOrders = async (req, res) => {
+    try {
+        const orders = await getAllOrdersService()
+        res.json(orders)
+    } catch (error) {
+        res.status(500)
+        console.error("Erreur lors de l'affichage des commandes");
     }
 }
